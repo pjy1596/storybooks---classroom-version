@@ -1,0 +1,34 @@
+<h1>Add Story</h1>
+<div class="row">
+    <form action="/stories" method="POST" class="col s12">
+        <div class="row">
+            <div class="input-field">
+                <input type="text" class="validate" id='text' name='title'>
+                <label for="text">Title</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field">
+                <select id='status' name='status'>
+
+                    <option value="public" selected>public</option>
+                    <option value="private">private</option>
+
+                </select>
+                <label for='status'>Status</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field">
+                <h5>{{name}}'s story is...</h5>
+                <textarea id="textarea" class="textarea" name='textarea'></textarea>
+
+            </div>
+        </div>
+        <div class="row">
+            <button class='btn waves-effect waves-light' name='action' type='submit'>Submit</button>
+            <a href="/dashboard" class='btn orange'>Cancel</a>
+        </div>
+
+    </form>
+</div>
