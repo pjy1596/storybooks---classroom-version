@@ -16,6 +16,7 @@
 <body>
     {{> _addbtn}}
     {{> _header}}
+    {{> _flashMessage}}
     <div class="container">
         {{{body}}}
     </div>
@@ -23,6 +24,7 @@
     <script>M.Sidenav.init(document.querySelector('.sidenav'))
         M.FormSelect.init(document.querySelector('select'))
         CKEDITOR.replace('textarea')
+        M.toast({ html: document.querySelector('#toast'), displayLength: 1500 });
     </script>
 </body>
 

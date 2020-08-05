@@ -9,7 +9,10 @@
 // ==냐 ===냐에서도 큰 차이, 그냥 post하는 주소 != delete랑 put하는 주소임, put이나 delete나 findbyid로 일단 찾은다음
 // 필요한 조치 해주는 것이 순서!! / findoneUpdate 쓰는 방법 틀리게 함 / put logic 계속 틀림
 // show template에서 사진 동그랗게 만드는 거 자꾸 안 되서 그냥 예전 거 베낌(small은 customize인 거 까먹음)
-// 마지막 get도 몇 가지 빠트림. public story만 보이게 만들어야 됨
+// 마지막 get도 몇 가지 빠트림. public story만 보이게 만들어야 됨 / profile에 이름과 사진 어디서나 보이게 만듦
+// flash 넣어줌,
+/* <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> */
+// <script>M.toast({ html: document.querySelector('#toast'), displayLength: 1500 });</script> 이 순서대로 되어야 스타일 먹힌다!!!
 const express = require("express");
 const dotenv = require("dotenv");
 const path = require("path");

@@ -24,3 +24,9 @@ p {
 .img-small {
   width: 180px;
 }
+@media only screen and (max-width: 600px) {
+  body {
+    width: 50%;
+    height: 50%;
+  }
+}

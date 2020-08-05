@@ -7,6 +7,10 @@ router.get("/add", ensureAuth, (req, res) => {
   try {
     res.render("stories/add", {
       name: req.user.fullName,
+      name: req.user.fullName,
+      whichPartial: function () {
+        return "_header";
+      },
     });
   } catch (err) {
     console.error(err);
@@ -40,6 +44,11 @@ router.get("/", ensureAuth, async (req, res) => {
       .lean();
     res.render("stories/index", {
       stories,
+      image: req.user.image,
+      name: req.user.fullName,
+      whichPartial: function () {
+        return "_header";
+      },
     });
   } catch (err) {
     console.error(err);
@@ -57,6 +66,11 @@ router.get("/edit/:id", ensureAuth, async (req, res) => {
       if (story.user._id == req.user.id) {
         res.render("stories/edit", {
           story,
+          image: req.user.image,
+          name: req.user.fullName,
+          whichPartial: function () {
+            return "_header";
+          },
         });
       } else {
         res.redirect("/dashboard");
@@ -112,6 +126,11 @@ router.get("/:id", ensureAuth, async (req, res) => {
     } else {
       res.render("stories/show", {
         story,
+        image: req.user.image,
+        name: req.user.fullName,
+        whichPartial: function () {
+          return "_header";
+        },
       });
     }
   } catch (err) {
@@ -130,7 +149,14 @@ router.get("/user/:userId", ensureAuth, async (req, res) => {
     if (!stories) {
       res.render("error/404");
     } else {
-      res.render("stories/index", { stories });
+      res.render("stories/index", {
+        stories,
+        image: req.user.image,
+        name: req.user.fullName,
+        whichPartial: function () {
+          return "_header";
+        },
+      });
     }
   } catch (err) {
     console.error(err);

@@ -8,6 +8,7 @@ router.get(
   "/google/callback",
   passport.authenticate("google", { failureRedirect: "/" }),
   function (req, res) {
+    req.flash("success_msg", "successfully logged in");
     res.redirect("/dashboard");
   }
 );
